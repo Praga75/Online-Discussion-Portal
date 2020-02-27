@@ -1,0 +1,25 @@
+﻿
+
+@{
+    ViewBag.Title = "Display";
+}
+
+<style>
+    .content {
+        background-color:lavender;
+    }
+    .bar {
+        background-color : black;
+    }
+</style>
+<h2>Posts</h2>
+<hr />
+
+<div class="content">
+    @foreach (OnlineDiscussionPortal.Entity.Post post in Model)
+    {
+        @Html.Partial("_PostDetails",post);
+    
+    }
+
+</div>
