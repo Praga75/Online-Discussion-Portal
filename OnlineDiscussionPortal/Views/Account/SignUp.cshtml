@@ -1,0 +1,73 @@
+﻿@model OnlineDiscussionPortal.Entity.Account
+
+@{
+    ViewBag.Title = "SignUp";
+}
+
+<style>
+    .container {
+        padding: 16px;
+    }
+    hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+    input[type=text], input[type=password] {
+        width: 100%;
+        padding: 5px;
+        margin: 5px 0 22px 0;
+        border: none;
+        background: #f1f1f1;
+    }
+    span {
+        color:red;
+    }
+</style>
+
+<h2>SignUp</h2>
+<p>Please fill in this form to create an account.</p>
+<hr>
+
+@using (Html.BeginForm("SignUp", "Account", FormMethod.Post))
+{
+    <div class="container">
+        
+            <label for="UserName"><b>User Name</b></label> <br />
+            @Html.TextBoxFor(Model => Model.UserName) <span>@Html.ValidationMessageFor(Model => Model.UserName)</span><br />
+
+            <label for="Password"><b>Password</b></label><br />
+            @Html.TextBoxFor(Model => Model.Password)<span>@Html.ValidationMessageFor(Model => Model.Password)</span><br />
+
+            <label for="Name"><b>Name</b></label><br />
+            @Html.TextBoxFor(Model => Model.Name) <span>@Html.ValidationMessageFor(Model => Model.Name)</span><br />
+
+            <label for="MailId"><b>MailId</b></label> <br />
+            @Html.TextBoxFor(Model => Model.MailId) <span>@Html.ValidationMessageFor(Model => Model.MailId)</span><br />
+
+            <label for="Date Of Birth"><b>Date Of Birth</b></label><br />
+            @Html.TextBoxFor(Model => Model.DateOfBirth)<br />
+
+            <label for="Mobile Number"><b>Mobile Number</b></label><br />
+            @Html.TextBoxFor(Model => Model.MobileNumber) <span>@Html.ValidationMessageFor(Model => Model.MobileNumber)</span><br />
+
+            <label for="Gender"><b>Gender</b></label><br />
+            @Html.RadioButtonFor(model => model.Gender, "Male")Male
+            @Html.RadioButtonFor(model => model.Gender, "Female")Female
+            @Html.RadioButtonFor(model => model.Gender, "Others")Others<br />
+
+            <label for="Address"><b>Address</b></label><br />
+            @Html.TextBoxFor(Model => Model.Address)<br />
+
+            <label for="Nationality"><b>Nationality</b></label> <span>@Html.ValidationMessageFor(Model => Model.Nationality)</span><br />
+            @Html.DropDownList("Nationality", new List<SelectListItem>
+                           {
+                      new SelectListItem{Text = "Indian", Value = "Indian" },
+                      new SelectListItem{Text = "SriLankan", Value = "SriLankan" },
+                      new SelectListItem{Text = "Pakistani", Value = "Pakistani" },
+                      new SelectListItem{Text = "Nepali", Value = "Nepali" },
+
+                           }, "Select Nationality")<br /><br />
+
+            <button >Sign Up</button> <button>Back</button>
+    </div>
+}

@@ -1,0 +1,39 @@
+﻿@model OnlineDiscussionPortal.Entity.Account
+
+@{
+    ViewBag.Title = "SignIn";
+}
+
+<h2>SignIn</h2>
+<hr />
+<style>
+    input[type=text], input[type=password] {
+        width: 100%;
+        padding: 5px;
+        margin: 5px 0 22px 0;
+        border: none;
+        background: #f1f1f1;
+    }
+        hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+        span {
+            color : red;
+        }
+</style>
+
+
+@using (Html.BeginForm("SignIn", "Account", FormMethod.Post))
+{
+<div>
+    <label for="UserName"><b>User Name</b></label> <br />
+    @Html.TextBoxFor(Model => Model.UserName) <span>@Html.ValidationMessageFor(Model => Model.UserName)</span><br />
+
+    <label for="Password"><b>Password</b></label><br />
+    @Html.TextBoxFor(Model => Model.Password) <span>@Html.ValidationMessageFor(Model => Model.Password)</span><br /><br />
+
+    <button type="submit">Sign In</button> <button>Back</button>
+</div>
+    
+}
