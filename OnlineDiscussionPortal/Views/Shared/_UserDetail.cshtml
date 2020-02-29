@@ -1,0 +1,32 @@
+﻿@model OnlineDiscussionPortal.Entity.Account
+
+
+    <div class="container">
+
+       
+            <h3>Personal Details</h3>
+        
+
+        <hr />
+
+        <div class="left">
+            <label for="Name"><b>Name</b></label> <br />
+            <label for="MailId"><b>MailId</b></label> <br />
+            <label for="Date Of Birth"><b>Date Of Birth</b></label><br />
+            <label for="Mobile Number"><b>Mobile Number</b></label> <br />
+            <label for="Gender"><b>Gender</b></label> <br />
+            <label for="Address"><b>Address</b></label> <br />
+            <label for="Nationality"><b>Nationality</b></label> <br />
+        </div>
+        
+        <div class="right">
+            <label for="Name">@Model.Name</label> <br />
+            <label for="MailId">@Model.MailId</label> <br />
+            <label for="Date Of Birth">@Model.DateOfBirth</label> <br />
+            <label for="Mobile Number">@Model.MobileNumber</label> <br />
+            <label for="Gender">@Model.Gender</label> <br />
+            <label for="Address">@Model.Address</label> <br />
+            <label for="Nationality">@Model.Nationality</label> <br />
+        </div>
+
+    </div>

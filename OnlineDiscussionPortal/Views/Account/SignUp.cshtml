@@ -12,7 +12,7 @@
   border: 1px solid #f1f1f1;
   margin-bottom: 25px;
 }
-    input[type=text], input[type=password] {
+    input[type=text], input[type=password], input[type=date], {
         width: 100%;
         padding: 5px;
         margin: 5px 0 22px 0;
@@ -33,22 +33,22 @@
     <div class="container">
         
             <label for="UserName"><b>User Name</b></label> <br />
-            @Html.TextBoxFor(Model => Model.UserName) <span>@Html.ValidationMessageFor(Model => Model.UserName)</span><br />
+            @Html.TextBoxFor(Model => Model.UserName,new {maxlength = 25 }) <span>@Html.ValidationMessageFor(Model => Model.UserName)</span><br />
 
             <label for="Password"><b>Password</b></label><br />
-            @Html.TextBoxFor(Model => Model.Password)<span>@Html.ValidationMessageFor(Model => Model.Password)</span><br />
+            @Html.PasswordFor(Model => Model.Password,new {maxlength = 25 })<span>@Html.ValidationMessageFor(Model => Model.Password)</span><br />
 
             <label for="Name"><b>Name</b></label><br />
-            @Html.TextBoxFor(Model => Model.Name) <span>@Html.ValidationMessageFor(Model => Model.Name)</span><br />
+            @Html.TextBoxFor(Model => Model.Name,new {maxlength = 25 }) <span>@Html.ValidationMessageFor(Model => Model.Name)</span><br />
 
             <label for="MailId"><b>MailId</b></label> <br />
-            @Html.TextBoxFor(Model => Model.MailId) <span>@Html.ValidationMessageFor(Model => Model.MailId)</span><br />
+            @Html.TextBoxFor(Model => Model.MailId,new {maxlength = 35 }) <span>@Html.ValidationMessageFor(Model => Model.MailId)</span><br />
 
             <label for="Date Of Birth"><b>Date Of Birth</b></label><br />
-            @Html.TextBoxFor(Model => Model.DateOfBirth)<br />
+            @Html.TextBoxFor(Model => Model.DateOfBirth, new { type = "date" })<br /><br />
 
             <label for="Mobile Number"><b>Mobile Number</b></label><br />
-            @Html.TextBoxFor(Model => Model.MobileNumber) <span>@Html.ValidationMessageFor(Model => Model.MobileNumber)</span><br />
+            @Html.TextBoxFor(Model => Model.MobileNumber,new {maxlength = 13 }) <span>@Html.ValidationMessageFor(Model => Model.MobileNumber)</span><br />
 
             <label for="Gender"><b>Gender</b></label><br />
             @Html.RadioButtonFor(model => model.Gender, "Male")Male

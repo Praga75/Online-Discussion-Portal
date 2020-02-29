@@ -1,0 +1,32 @@
+﻿@*@model IEnumerable<OnlineDiscussionPortal.Entity.Account>*@
+
+@{
+    ViewBag.Title = "Display";
+}
+
+<h2>Display</h2>
+
+<style>
+    .content {
+        background-color: lavender;
+    }
+
+    hr {
+        background-color: lawngreen;
+        width:2%;
+    }
+    .left {
+        float : left;
+    }
+    .right {
+        float : right;
+    }
+</style>
+
+<div class="content">
+    @foreach (OnlineDiscussionPortal.Entity.Account account in Model)
+    {
+        @Html.Partial("_UserDetail", account);
+
+    }
+</div>
