@@ -4,25 +4,7 @@
     ViewBag.Title = "SignUp";
 }
 
-<style>
-    .container {
-        padding: 16px;
-    }
-    hr {
-  border: 1px solid #f1f1f1;
-  margin-bottom: 25px;
-}
-    input[type=text], input[type=password], input[type=date], {
-        width: 100%;
-        padding: 5px;
-        margin: 5px 0 22px 0;
-        border: none;
-        background: #f1f1f1;
-    }
-    span {
-        color:red;
-    }
-</style>
+
 
 <h2>SignUp</h2>
 <p>Please fill in this form to create an account.</p>
@@ -58,15 +40,9 @@
             <label for="Address"><b>Address</b></label><br />
             @Html.TextBoxFor(Model => Model.Address)<br />
 
-            <label for="Nationality"><b>Nationality</b></label> <span>@Html.ValidationMessageFor(Model => Model.Nationality)</span><br />
-            @Html.DropDownList("Nationality", new List<SelectListItem>
-                           {
-                      new SelectListItem{Text = "Indian", Value = "Indian" },
-                      new SelectListItem{Text = "SriLankan", Value = "SriLankan" },
-                      new SelectListItem{Text = "Pakistani", Value = "Pakistani" },
-                      new SelectListItem{Text = "Nepali", Value = "Nepali" },
-
-                           }, "Select Nationality")<br /><br />
+            <label for="Nationality"><b>Nationality</b></label> <br />
+        @Html.DropDownList("Nationality",EnumHelper.GetSelectList(typeof( OnlineDiscussionPortal.App_Code.Nationality.NationalityType)),"Select Your Nationality", new { @class = "dropdown" })   
+    <span>@Html.ValidationMessageFor(Model => Model.Nationality)</span> <br /><br />
 
             <button type="submit" >Sign Up</button> <button type="reset">Back</button>
     </div>

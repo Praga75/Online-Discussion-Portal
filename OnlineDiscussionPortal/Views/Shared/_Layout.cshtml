@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/AccountStyle.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/PostStyle.css" rel="stylesheet" type="text/css" />
+
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <script src="~/Scripts/modernizr-2.8.3.js"></script>
 </head>
@@ -17,8 +20,8 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-                @Html.ActionLink("SignIn", "SignIn", "Account", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Knowledge Sharing", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("SignIn", "SignIn", "Account", new { area = "" }, new { @class = "navbar-brand"})
                 @Html.ActionLink("SignUp", "SignUp", "Account", new { area = "" }, new { @class = "navbar-brand" })
                 @Html.ActionLink("Create", "Create", "User", new { area = "" }, new { @class = "navbar-brand" })
                 @Html.ActionLink("Display", "Display", "User", new { area = "" }, new { @class = "navbar-brand" })

@@ -1,0 +1,24 @@
+﻿body {
+}
+.container {
+    padding: 16px;
+}
+
+hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+}
+
+.dropdown, input[type=text], input[type=password], input[type=date] {
+    width: 100%;
+    padding: 5px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+}
+
+span {
+    color: red;
+}
+
+

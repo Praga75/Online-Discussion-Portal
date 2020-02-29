@@ -33,5 +33,7 @@ namespace OnlineDiscussionPortal.Controllers
             IEnumerable<Post> posts = postRepository.GetPosts();
             return View(posts);
         }
+       
+        
     }
 }

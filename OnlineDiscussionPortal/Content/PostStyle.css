@@ -1,0 +1,25 @@
+﻿
+input[type=text], textarea {
+    width: 100%;
+    padding: 5px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+}
+
+textarea {
+    height: 100px;
+    max-width: 500px;
+}
+
+hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+}
+.content {
+    background-color: lavender;
+}
+
+.bar {
+    background-color: black;
+}
