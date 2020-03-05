@@ -1,0 +1,48 @@
+﻿@model OnlineDiscussionPortal.Entity.Account
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+<p>Please edit your personal detail.</p>
+<hr>
+
+@using (Html.BeginForm("Edit", "Account", FormMethod.Post))
+{
+    <div class="container">
+
+        <label for="UserName"><b>User Name</b></label> <br />
+        @Html.TextBoxFor(Model => Model.UserName, new { maxlength = 25 }) <span>@Html.ValidationMessageFor(Model => Model.UserName)</span><br />
+
+        <label for="Password"><b>Password</b></label><br />
+        @Html.PasswordFor(Model => Model.Password, new { maxlength = 25 })<span>@Html.ValidationMessageFor(Model => Model.Password)</span><br />
+
+        <label for="Name"><b>Name</b></label><br />
+        @Html.TextBoxFor(Model => Model.Name, new { maxlength = 25 }) <span>@Html.ValidationMessageFor(Model => Model.Name)</span><br />
+
+        <label for="MailId"><b>MailId</b></label> <br />
+        @Html.TextBoxFor(Model => Model.MailId, new { maxlength = 35 }) <span>@Html.ValidationMessageFor(Model => Model.MailId)</span><br />
+
+        <label for="Date Of Birth"><b>Date Of Birth</b></label><br />
+        @Html.TextBoxFor(Model => Model.DateOfBirth, new { type = "date" })<br /><br />
+
+        <label for="Mobile Number"><b>Mobile Number</b></label><br />
+        @Html.TextBoxFor(Model => Model.MobileNumber, new { maxlength = 13 }) <span>@Html.ValidationMessageFor(Model => Model.MobileNumber)</span><br />
+
+        <label for="Gender"><b>Gender</b></label><br />
+        @Html.RadioButtonFor(model => model.Gender, "Male")Male
+        @Html.RadioButtonFor(model => model.Gender, "Female")Female
+        @Html.RadioButtonFor(model => model.Gender, "Others")Others<br />
+
+        <label for="Address"><b>Address</b></label><br />
+        @Html.TextBoxFor(Model => Model.Address)<br />
+
+        <label for="Nationality"><b>Nationality</b></label> <br />
+        @Html.DropDownList("Nationality", EnumHelper.GetSelectList(typeof(OnlineDiscussionPortal.App_Code.Nationality.NationalityType)), "Select Your Nationality", new { @class = "dropdown" })
+        <span>@Html.ValidationMessageFor(Model => Model.Nationality)</span> <br /><br />
+
+        <button type="submit">Sign Up</button> <button type="reset">Back</button>
+    </div>
+}
+

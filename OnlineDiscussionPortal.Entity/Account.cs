@@ -4,12 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace OnlineDiscussionPortal.Entity
 {
+    [Table("Account")]
     public class Account
     {
-        
+        [Key]
         [Required]
         [RegularExpression(@"[a-zA-Z0-9]*$" , ErrorMessage ="UserName Should not contain any special characters")]
         public string UserName { get; set; }

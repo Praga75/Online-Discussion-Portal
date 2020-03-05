@@ -9,9 +9,9 @@ namespace OnlineDiscussionPortal.Repository
 {
     public class UserRepository
     {
-        public static List<Account> accountList = new List<Account>();
+        public  List<Account> accountList = new List<Account>();
 
-        static UserRepository()
+        public UserRepository()
         {
             accountList.Add(new Account("Pragadishvari", "Pragadishvarik2020@srishakthi.ac.in", "04/09/1998", 9876543210, "Female", "59,Rose Garden,Ooty", "Indian"));
         }
@@ -19,6 +19,19 @@ namespace OnlineDiscussionPortal.Repository
         {
             return accountList;
         }
-        
+        public void UpdateDetail(Account account)
+        {
+            foreach (Account value in accountList)
+            {
+                if (value.MailId == account.MailId)
+                {
+                    value.UserName = account.UserName;
+                    value.Password = account.Password;
+                    value.Name = account.Name;
+                    value.Address = account.Address;
+                }
+            }
+        }
+
     }
 }

@@ -9,8 +9,9 @@
 <hr />
 
 <div class="content">
-    @foreach (OnlineDiscussionPortal.Entity.Post post in Model)
+    @foreach (OnlineDiscussionPortal.Entity.Post post in Model) 
     {
+        
         @Html.Partial("_PostDetails",post);
     
     }

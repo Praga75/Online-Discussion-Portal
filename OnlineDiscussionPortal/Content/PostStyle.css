@@ -23,3 +23,9 @@ hr {
 .bar {
     background-color: black;
 }
+.content {
+    background-color: lavender;
+}
+.editDetails {
+    float :right;
+}
